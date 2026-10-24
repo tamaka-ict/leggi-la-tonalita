@@ -1,0 +1,31 @@
+PUBBLICARE L'APP LEGGI LA TONALITÀ CON GITHUB PAGES
+
+1) Registrati gratuitamente su https://github.com/signup (se non hai un account).
+   Conferma l'email e proteggi l'account con autenticazione a due fattori.
+2) Accedi e apri https://github.com/new
+3) Nome repository: leggi-la-tonalita
+   Visibilità: Public
+   Clicca Create repository. Se trovi l'opzione Add a README, puoi lasciarla disattivata.
+4) Estrai lo ZIP sul computer. Nel repository clicca "uploading an existing file"
+   oppure Add file > Upload files. Trascina TUTTI I FILE ESTRATTI dalla
+   cartella leggi-la-tonalita (non caricare il solo ZIP).
+   Clicca Commit changes.
+5) Verifica che index.html sia nella schermata principale del repository.
+6) Apri Settings > Pages.
+   Sezione Build and deployment:
+   - Source: Deploy from a branch
+   - Branch: main
+   - Folder: /(root)
+   - Save
+7) Quando GitHub indica il sito pubblicato, il link sarà:
+   https://TUO_NOME_UTENTE.github.io/leggi-la-tonalita/
+8) Condividi questo link via WhatsApp con la famiglia. Ogni utente avrà
+   statistiche separate sul proprio dispositivo.
+
+Per mettere la app sulla schermata iniziale:
+- Android Chrome: menu tre puntini > Installa app o Aggiungi a schermata Home.
+- iPhone Safari: pulsante Condividi > Aggiungi alla schermata Home.
+
+GitHub Pages con piano gratuito richiede un repository pubblico.
+Non caricare password o dati personali nel repository.
+Per aiuto: https://docs.github.com/en/pages/quickstart
