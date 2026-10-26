@@ -1,31 +1,40 @@
-PUBBLICARE L'APP LEGGI LA TONALITÀ CON GITHUB PAGES
+LEGGI LA TONALITÀ — VERSIONE 2.0
+================================
 
-1) Registrati gratuitamente su https://github.com/signup (se non hai un account).
-   Conferma l'email e proteggi l'account con autenticazione a due fattori.
-2) Accedi e apri https://github.com/new
-3) Nome repository: leggi-la-tonalita
-   Visibilità: Public
-   Clicca Create repository. Se trovi l'opzione Add a README, puoi lasciarla disattivata.
-4) Estrai lo ZIP sul computer. Nel repository clicca "uploading an existing file"
-   oppure Add file > Upload files. Trascina TUTTI I FILE ESTRATTI dalla
-   cartella leggi-la-tonalita (non caricare il solo ZIP).
-   Clicca Commit changes.
-5) Verifica che index.html sia nella schermata principale del repository.
-6) Apri Settings > Pages.
-   Sezione Build and deployment:
-   - Source: Deploy from a branch
-   - Branch: main
-   - Folder: /(root)
-   - Save
-7) Quando GitHub indica il sito pubblicato, il link sarà:
-   https://TUO_NOME_UTENTE.github.io/leggi-la-tonalita/
-8) Condividi questo link via WhatsApp con la famiglia. Ogni utente avrà
-   statistiche separate sul proprio dispositivo.
+SE HAI GIÀ PUBBLICATO LA VERSIONE PRECEDENTE:
 
-Per mettere la app sulla schermata iniziale:
-- Android Chrome: menu tre puntini > Installa app o Aggiungi a schermata Home.
-- iPhone Safari: pulsante Condividi > Aggiungi alla schermata Home.
+1. Accedi a github.com e apri il repository leggi-la-tonalita.
+2. Per prudenza, puoi scaricare un backup: Code > Download ZIP.
+3. Estrai sul computer lo ZIP della nuova versione.
+4. Nel repository seleziona Add file > Upload files.
+5. Trascina TUTTI i file CONTENUTI nella cartella estratta (non lo ZIP).
+   Sostituisci quelli già presenti: index.html, app.js, sw.js, README.md,
+   ISTRUZIONI-GITHUB.txt, manifest.webmanifest e icon.svg.
+   Aggiungi il nuovo file scale.js.
+6. Conferma il commit sul ramo main con il messaggio:
+   Aggiorna alla versione 2 con scale sonore sincronizzate
+7. GitHub Pages continuerà a usare lo STESSO link condiviso prima.
+8. Se vedi la vecchia app, attendi la pubblicazione e ricarica il sito.
+   Se usi l'icona installata sul telefono, chiudi e riapri l'app.
 
-GitHub Pages con piano gratuito richiede un repository pubblico.
-Non caricare password o dati personali nel repository.
-Per aiuto: https://docs.github.com/en/pages/quickstart
+SE NON HAI ANCORA PUBBLICATO L'APP:
+
+1. Registrati a https://github.com/signup
+2. Crea un nuovo repository pubblico leggi-la-tonalita.
+3. Estrai lo ZIP e carica i file interni con Add file > Upload files.
+4. Settings > Pages > Source: Deploy from a branch > main > /(root) > Save.
+5. Visita https://TUOUSERNAME.github.io/leggi-la-tonalita/
+
+NOVITÀ:
+- Scala maggiore e minore naturale, armonica e melodica.
+- Ascolto con audio generato direttamente dal browser, anche offline.
+- Cursore arancione sincronizzato con note e avanzamento orizzontale.
+- Velocità regolabile, pausa e note ascoltabili singolarmente.
+- Stesso quiz e punteggi della versione precedente.
+
+CONTROLLI RAPIDI:
+- Su Impara prova Do maggiore e premi Ascolta.
+- Per sentire l'audio, premi il pulsante (autoplay non consentito).
+- Su smartphone il pentagramma scorre seguendo la nota ascoltata.
+
+Nella cartella README.md trovi le istruzioni dettagliate.
