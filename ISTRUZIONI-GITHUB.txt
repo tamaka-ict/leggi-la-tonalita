@@ -1,40 +1,29 @@
-LEGGI LA TONALITÀ — VERSIONE 2.0
-================================
+LEGGI LA TONALITÀ 2.1 — AGGIORNAMENTO DEL TUO GITHUB
 
-SE HAI GIÀ PUBBLICATO LA VERSIONE PRECEDENTE:
+Repository: https://github.com/tamaka-ict/leggi-la-tonalita
+Sito pubblico: https://tamaka-ict.github.io/leggi-la-tonalita/
 
-1. Accedi a github.com e apri il repository leggi-la-tonalita.
-2. Per prudenza, puoi scaricare un backup: Code > Download ZIP.
-3. Estrai sul computer lo ZIP della nuova versione.
-4. Nel repository seleziona Add file > Upload files.
-5. Trascina TUTTI i file CONTENUTI nella cartella estratta (non lo ZIP).
-   Sostituisci quelli già presenti: index.html, app.js, sw.js, README.md,
-   ISTRUZIONI-GITHUB.txt, manifest.webmanifest e icon.svg.
-   Aggiungi il nuovo file scale.js.
-6. Conferma il commit sul ramo main con il messaggio:
-   Aggiorna alla versione 2 con scale sonore sincronizzate
-7. GitHub Pages continuerà a usare lo STESSO link condiviso prima.
-8. Se vedi la vecchia app, attendi la pubblicazione e ricarica il sito.
-   Se usi l'icona installata sul telefono, chiudi e riapri l'app.
+1. Estrai il file ZIP sul computer.
+2. Accedi al repository GitHub e vai sul ramo main.
+3. Se vuoi, fai un backup con Code > Download ZIP.
+4. Seleziona Add file > Upload files.
+5. Carica i file estratti nella radice del repository (in particolare index.html e sw.js).
+6. Conferma Commit changes direttamente su main.
+7. Attendi la pubblicazione, quindi apri il sito e cerca 'Versione 2.1' in alto.
+8. Apri Impara, verifica le 15 note, premi Prova il suono di una nota e Ascolta.
+9. Durante la riproduzione cambia i BPM e verifica che la velocità cambi.
 
-SE NON HAI ANCORA PUBBLICATO L'APP:
+Non creare un nuovo repository e non modificare Settings > Pages.
+Il collegamento pubblico rimane lo stesso.
 
-1. Registrati a https://github.com/signup
-2. Crea un nuovo repository pubblico leggi-la-tonalita.
-3. Estrai lo ZIP e carica i file interni con Add file > Upload files.
-4. Settings > Pages > Source: Deploy from a branch > main > /(root) > Save.
-5. Visita https://TUOUSERNAME.github.io/leggi-la-tonalita/
+I vecchi file app.js e scale.js non sono più necessari: il nuovo index.html
+incorpora tutta la logica. Possono restare nella cartella di GitHub senza
+provocare problemi; eventualmente puoi eliminarli in seguito.
 
-NOVITÀ:
-- Scala maggiore e minore naturale, armonica e melodica.
-- Ascolto con audio generato direttamente dal browser, anche offline.
-- Cursore arancione sincronizzato con note e avanzamento orizzontale.
-- Velocità regolabile, pausa e note ascoltabili singolarmente.
-- Stesso quiz e punteggi della versione precedente.
+Se compare ancora la versione 2.0, apri:
+https://tamaka-ict.github.io/leggi-la-tonalita/?v=21
+oppure chiudi e riapri il browser con connessione a Internet.
+Evita di cancellare i dati del sito se vuoi conservare le statistiche.
 
-CONTROLLI RAPIDI:
-- Su Impara prova Do maggiore e premi Ascolta.
-- Per sentire l'audio, premi il pulsante (autoplay non consentito).
-- Su smartphone il pentagramma scorre seguendo la nota ascoltata.
-
-Nella cartella README.md trovi le istruzioni dettagliate.
+In caso di mancanza di audio, prova il pulsante 'Prova il suono di una nota'
+e verifica il volume multimediale del telefono.
