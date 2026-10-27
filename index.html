@@ -17,15 +17,16 @@
 .scale-current{font-size:19px;font-weight:800;color:#135a8c;font-variant-numeric:tabular-nums}
 .scale-progress{background:#e5edf4;height:7px;border-radius:5px;overflow:hidden;margin-top:10px}
 .scale-progress-fill{height:100%;width:0;background:#2188b7;transition:width .08s linear}
+.scale-layout{margin-top:14px}.scale-view-meta{display:flex;gap:8px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin-top:8px}.scale-page{color:#315c7e;font-size:12px;font-weight:700;font-variant-numeric:tabular-nums}#scaleScrolly{scroll-behavior:auto!important;overflow-anchor:none}#scaleScrolly svg{touch-action:pan-x}
 #tempo{display:block;width:100%;accent-color:#125789;margin:8px 0 2px}
 .timing{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
 .helper{font-size:12px;color:#647c90;line-height:1.5}
 .audio-headline{font-size:15px;font-weight:700;margin:0}
 @media(max-width:420px){.music-options{gap:8px}.audiobar button{padding:10px 8px;font-size:13px}}
-</style></head><body><main><header><div><h1>♫ Leggi la tonalità</h1><div class="muted">Allenamento di lettura e ascolto musicale</div></div><span class="pill">Versione 2.1</span></header><div class="card"><div class="tabs"><button class="tab active" id="practiceTab">Allenati</button><button class="tab" id="learnTab">Impara</button></div><div class="controls"><label>Chiave musicale<select id="clef"><option value="g2">Sol · violino (2ª linea)</option><option value="f4">Fa · basso (4ª linea)</option><option value="f3">Fa · baritono (3ª linea)</option><option value="c1">Do · soprano (1ª linea)</option><option value="c2">Do · mezzosoprano (2ª linea)</option><option value="c3">Do · contralto (3ª linea)</option><option value="c4">Do · tenore (4ª linea)</option><option value="c5">Do · baritono (5ª linea)</option><option value="g1">Sol · francese (1ª linea)</option></select></label><label>Tonalità<select id="mode"><option value="major">Maggiori</option><option value="minor">Minori</option><option value="both">Maggiori e minori</option></select></label><label class="wide">Difficoltà<select id="level"><option value="2">Principiante · fino a 2 alterazioni</option><option value="4">Intermedio · fino a 4 alterazioni</option><option value="7">Avanzato · fino a 7 alterazioni</option></select></label></div></div>
+</style></head><body><main><header><div><h1>♫ Leggi la tonalità</h1><div class="muted">Allenamento di lettura e ascolto musicale</div></div><span class="pill">Versione 2.2</span></header><div class="card"><div class="tabs"><button class="tab active" id="practiceTab">Allenati</button><button class="tab" id="learnTab">Impara</button></div><div class="controls"><label>Chiave musicale<select id="clef"><option value="g2">Sol · violino (2ª linea)</option><option value="f4">Fa · basso (4ª linea)</option><option value="f3">Fa · baritono (3ª linea)</option><option value="c1">Do · soprano (1ª linea)</option><option value="c2">Do · mezzosoprano (2ª linea)</option><option value="c3">Do · contralto (3ª linea)</option><option value="c4">Do · tenore (4ª linea)</option><option value="c5">Do · baritono (5ª linea)</option><option value="g1">Sol · francese (1ª linea)</option></select></label><label>Tonalità<select id="mode"><option value="major">Maggiori</option><option value="minor">Minori</option><option value="both">Maggiori e minori</option></select></label><label class="wide">Difficoltà<select id="level"><option value="2">Principiante · fino a 2 alterazioni</option><option value="4">Intermedio · fino a 4 alterazioni</option><option value="7">Avanzato · fino a 7 alterazioni</option></select></label></div></div>
 <section id="practice"><div class="card stats"><div><div class="muted">Corrette</div><strong id="score" class="mono">0/0</strong></div><div><div class="muted">Precisione</div><strong id="accuracy" class="mono">—</strong></div><div><div class="muted">Serie</div><strong id="streak" class="mono">0</strong></div></div><div class="card"><div class="headingrow"><b class="muted" id="number">ESERCIZIO 1</b><button class="smallbtn" id="reset">Azzera statistiche</button></div><div class="staffwrap"><svg id="staff" viewBox="0 0 360 204" role="img" aria-label="Pentagramma e armatura"></svg></div><div class="center"><h2 id="question">Qual è la tonalità maggiore?</h2><div class="muted">Osserva l'armatura di chiave sul pentagramma</div></div><div class="answers" id="answers"></div><div class="result hide" id="feedback" role="status" aria-live="polite"></div><button class="primary hide" id="next">Prossimo esercizio →</button></div></section>
 <section id="learn" class="hide"><div class="card guide"><h2>Come riconoscere una tonalità</h2><p>L'<strong>armatura di chiave</strong> è l'insieme di diesis o bemolli subito dopo la chiave. Conta le alterazioni e riconosci la tonalità maggiore e la relativa minore.</p><div class="twocol"><div class="tip"><b>♯ Diesis</b><br>Fa · Do · Sol · Re · La · Mi · Si<br><small>La tonica maggiore è un semitono sopra l'ultimo diesis.</small></div><div class="tip"><b>♭ Bemolli</b><br>Si · Mi · La · Re · Sol · Do · Fa<br><small>Con almeno 2 bemolli, la tonica maggiore è il penultimo bemolle.</small></div></div><p>Eccezioni: con <b>un bemolle</b> si ha Fa maggiore; con <b>zero alterazioni</b> Do maggiore e La minore. La relativa minore si trova tre semitoni sotto la tonica maggiore.</p><p class="muted">Un'armatura, da sola, non basta per distinguere un brano maggiore dal relativo minore: occorre considerare anche il contesto musicale.</p></div><div class="card" id="scaleCard">
-  <div class="music-head"><h2 style="margin:0">🎼 Ascolta e segui la scala</h2><span class="pill" style="display:inline-block">Audio sincronizzato · v2.1</span></div>
+  <div class="music-head"><h2 style="margin:0">🎼 Ascolta e segui la scala</h2><span class="pill" style="display:inline-block">Audio sincronizzato · v2.2</span></div>
   <p class="muted">Scegli una tonalità, premi <b>Ascolta</b> e segui la linea arancione sul pentagramma: indica la nota suonata. Puoi anche toccare una nota per ascoltarla da sola.</p>
   <div class="music-options">
     <label class="wide">Tonalità studiata<select id="studyKeySelect"></select></label>
@@ -34,9 +35,12 @@
     <label>Timbro<select id="timbre"><option value="soft">Tono morbido</option><option value="pure">Tono puro</option></select></label>
   </div>
   <label style="margin-top:13px"><span class="timing">Velocità di esecuzione <strong id="tempoValue">90 BPM</strong></span><input type="range" id="tempo" min="50" max="170" value="90" step="5"></label>
+  <label class="scale-layout">Visualizzazione durante l’ascolto
+    <select id="noteWindow"><option value="5">Schermata fissa per 5 note (consigliata)</option><option value="3">Schermata fissa per 3 note</option><option value="continuous">Scorrimento a ogni nota (classico)</option></select>
+  </label>
   <h3 id="scaleTitle" class="audio-headline" style="margin-top:12px"></h3>
   <div id="scaleScrolly" tabindex="0" aria-label="Spartito della scala, scorribile orizzontalmente"><svg id="scaleStaff" viewBox="0 0 1180 228" role="img" aria-label="Scala sul pentagramma con cursore sincronizzato"></svg></div>
-  <div class="helper">Il pentagramma è scorrevole: trascina orizzontalmente per vedere tutte le note. Durante l’ascolto seguirà la nota corrente.</div>
+  <div class="scale-view-meta"><span class="helper" id="scaleViewHint">Schermata ferma per 5 note. Tocca le note per ascoltarle.</span><span class="scale-page" id="scalePage" aria-live="off">Gruppo 1/3</span></div>
   <div class="scale-state"><span id="scaleStatus" role="status" aria-live="polite">Pronta per l'ascolto</span><span id="scaleCurrent" class="scale-current" aria-live="off">—</span></div>
   <div class="scale-progress" id="scaleProgressTrack" role="progressbar" aria-label="Avanzamento ascolto" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="scale-progress-fill" id="scaleProgress"></div></div>
   <div class="audiobar"><button id="playScale" class="play">▶ Ascolta la scala</button><button id="pauseScale" class="secondary" disabled>⏸ Pausa</button><button id="stopScale" class="secondary">■ Stop</button></div>
@@ -120,7 +124,7 @@ $('practiceTab').onclick=()=>tab(false);$('learnTab').onclick=()=>tab(true);$('n
   const sharpLetters=[3,0,4,1,5,2,6],flatLetters=[6,2,5,1,4,0,3];
   const sharpOffsets=[8,5,9,6,3,7,4],flatOffsets=[4,7,3,6,2,5,1];
   const intervals={major:[0,2,4,5,7,9,11,12],natural:[0,2,3,5,7,8,10,12],harmonic:[0,2,3,5,7,8,11,12],melodic:[0,2,3,5,7,9,11,12]};
-  let studyKey=app.getStudyKey(), notes=[],noteGraphics=[], position=-1;
+  let studyKey=app.getStudyKey(), notes=[],noteGraphics=[], position=-1, visiblePage=-1;
   let ctx=null,playing=null,pausedAt=null,raf=0,isolatedVoices=[];
   let state='stopped';
   const viewWidth=1180, top=79, bottom=147, staffLine=17;
@@ -265,20 +269,58 @@ $('practiceTab').onclick=()=>tab(false);$('learnTab').onclick=()=>tab(true);$('n
     const count=notes.length;
     $('scaleSummary').textContent=`${count} note: salita di un'ottava e discesa. Le note scritte e l'audio cambiano insieme.`;
     if(kind==='minor'&&minorKind==='melodic')$('scaleSummary').textContent+=' Nella scala minore melodica la discesa è naturale.';
-    $('scaleScrolly').scrollLeft=0;
+    $('scaleScrolly').scrollLeft=0;visiblePage=-1;position=-1;
+    refreshWindowHint();
     updateCursor(0,-1);
     $('scaleStatus').textContent='Pronta per l’ascolto';
     $('scaleProgressTrack').setAttribute('aria-valuenow','0');
   }
-  function updateCursor(fraction,index){
-    const first=notes[0],last=notes[notes.length-1];if(!first||!last)return;
-    const x=first.x+(last.x-first.x)*Math.max(0,Math.min(1,fraction));
-    $('scaleDone').setAttribute('x2',String(x));
-    for(const e of ['scaleCursor','scalePointer']){
-      const el=$(e);el.setAttribute(e==='scaleCursor'?'x1':'cx',String(x));
-      if(e==='scaleCursor')el.setAttribute('x2',String(x));
-      el.setAttribute('opacity',index<0?'0':'1');
+
+// L'inquadratura resta immobile per N note. Il movimento avviene solo
+// all'ingresso in un nuovo gruppo, non ogni volta che cambia la nota.
+// Il cursore musicale si posiziona esattamente sulla nota attiva; la
+// progress bar sopra e sotto mantiene l'avanzamento continuo.
+function positionViewport(index,force=false){
+  if(index<0)return;
+  const holder=$('scaleScrolly');
+  const style=$('noteWindow').value;
+  if(style==='continuous'){
+    if(force||index!==position){
+      const x=notes[index].x;
+      holder.scrollLeft=Math.max(0,Math.min(holder.scrollWidth-holder.clientWidth,x-holder.clientWidth/2));
+      $('scalePage').textContent='Nota '+(index+1)+'/'+notes.length;
     }
+    return;
+  }
+  const size=Number(style);
+  const page=Math.floor(index/size);
+  if(!force&&page===visiblePage)return;
+  const from=page*size;
+  const to=Math.min(notes.length-1,from+size-1);
+  const width=notes[to].x-notes[from].x;
+  const leftPad=Math.max(22,(holder.clientWidth-width)/2);
+  const target=notes[from].x-leftPad;
+  // Assegnazione diretta (nessuna animazione di scroll): una sola volta per gruppo.
+  holder.scrollLeft=Math.max(0,Math.min(holder.scrollWidth-holder.clientWidth,target));
+  visiblePage=page;
+  $('scalePage').textContent=`Note ${from+1}–${to+1} / ${notes.length} · gruppo ${page+1}/${Math.ceil(notes.length/size)}`;
+}
+function updateCursor(fraction,index){
+  const first=notes[0],last=notes[notes.length-1];if(!first||!last)return;
+  const x=first.x+(last.x-first.x)*Math.max(0,Math.min(1,fraction));
+  $('scaleDone').setAttribute('x2',String(x));
+  $('scaleProgress').style.width=Math.round(fraction*100)+'%';
+  $('scaleProgressTrack').setAttribute('aria-valuenow',String(Math.round(fraction*100)));
+  // Solo alla transizione tra due note si aggiorna la notazione:
+  // meno modifiche SVG e nessuna vibrazione del cursore durante il suono.
+  if(index!==position){
+    const pointX=index<0?first.x:notes[index].x;
+    const line=$('scaleCursor'),point=$('scalePointer');
+    line.setAttribute('x1',String(pointX));
+    line.setAttribute('x2',String(pointX));
+    point.setAttribute('cx',String(pointX));
+    line.setAttribute('opacity',index<0?'0':'1');
+    point.setAttribute('opacity',index<0?'0':'1');
     noteGraphics.forEach((g,i)=>{
       const active=i===index;
       g.dot.setAttribute('opacity',active?'0.72':'0');
@@ -286,17 +328,17 @@ $('practiceTab').onclick=()=>tab(false);$('learnTab').onclick=()=>tab(true);$('n
       g.label.setAttribute('fill',active?'#a4500d':'#526d83');
       g.label.setAttribute('font-weight',active?'800':'550');
     });
-    $('scaleProgress').style.width=Math.round(fraction*100)+'%';
-    $('scaleProgressTrack').setAttribute('aria-valuenow',String(Math.round(fraction*100)));
-    if(index>=0&&notes[index]){
+    if(index>=0){
       $('scaleCurrent').textContent=notes[index].label+' · '+(notes[index].degree===0?'I / VIII':String(notes[index].degree+1)+'° grado');
-      if(index!==position){
-        const w=$('scaleScrolly'),note=notes[index],target=note.x-w.clientWidth/2;
-        w.scrollLeft=Math.max(0,target);
-      }
-    }else $('scaleCurrent').textContent='—';
+      positionViewport(index);
+    }else{
+      $('scaleCurrent').textContent='—';
+      const size=$('noteWindow').value;
+      $('scalePage').textContent=size==='continuous'?'Scorrimento continuo':`Gruppo 1/${Math.ceil(notes.length/Number(size))}`;
+    }
     position=index;
   }
+}
   function context(){
     if(ctx)return ctx;
     const Audio=window.AudioContext||window.webkitAudioContext;
@@ -328,7 +370,7 @@ $('practiceTab').onclick=()=>tab(false);$('learnTab').onclick=()=>tab(true);$('n
     silence(isolatedVoices);isolatedVoices=[];
     state='stopped';$('playScale').textContent='▶ Ascolta la scala';
     $('pauseScale').disabled=true;$('pauseScale').textContent='⏸ Pausa';
-    if(!quiet){updateCursor(0,-1);$('scaleStatus').textContent='Riproduzione interrotta';}
+    if(!quiet){updateCursor(0,-1);$('scaleScrolly').scrollLeft=0;visiblePage=-1;$('scaleStatus').textContent='Riproduzione interrotta';}
   }
   function schedulePlayback(a,beat,from=0){
     const begin=a.currentTime+0.075-from*beat;
@@ -383,8 +425,14 @@ $('practiceTab').onclick=()=>tab(false);$('learnTab').onclick=()=>tab(true);$('n
       $('scaleStatus').textContent='Nota singola: '+notes[index].label+' (controlla il volume multimediale)';
     }catch(err){$('scaleStatus').textContent='Audio non disponibile: '+err.message;}
   }
+  function refreshWindowHint(){
+    const mode=$('noteWindow').value;
+    $('scaleViewHint').textContent=mode==='continuous'?'Scorrimento classico: la vista segue ogni nota.':`Vista stabile: lo spartito cambia solo ogni ${mode} note. Puoi spostarlo a mano.`;
+    const i=position>=0?position:-1;
+    if(i<0)$('scalePage').textContent=mode==='continuous'?'Scorrimento continuo':`Gruppo 1/${Math.ceil(notes.length/Number(mode))}`;
+  }
   function saveSettings(){
-    try{localStorage.setItem('tonality-scale-v2',JSON.stringify({type:selectedType(),variant:variant(),tempo:$('tempo').value,timbre:$('timbre').value}));}catch{}
+    try{localStorage.setItem('tonality-scale-v2',JSON.stringify({type:selectedType(),variant:variant(),tempo:$('tempo').value,timbre:$('timbre').value,window:$('noteWindow').value}));}catch{}
   }
   function setKeySelect(k){$('studyKeySelect').value=String(app.keys.indexOf(k));}
   function onStudyChange(e){studyKey=e.detail.key;setKeySelect(studyKey);renderScale();}
@@ -409,9 +457,18 @@ $('practiceTab').onclick=()=>tab(false);$('learnTab').onclick=()=>tab(true);$('n
         const element=$({type:'scaleType',variant:'minorVariant',timbre:'timbre'}[id]);
         if(element&&Array.from(element.options).some(o=>o.value===v[id]))element.value=v[id];
       }
-      if(Number(v.tempo)>=50&&Number(v.tempo)<=170)$('tempo').value=String(v.tempo);}
+      if(Number(v.tempo)>=50&&Number(v.tempo)<=170)$('tempo').value=String(v.tempo);
+      if(['3','5','continuous'].includes(v.window))$('noteWindow').value=v.window;}
     }catch{}
     $('tempoValue').textContent=$('tempo').value+' BPM';
+    refreshWindowHint();
+    $('noteWindow').addEventListener('change',()=>{
+      visiblePage=-1;
+      refreshWindowHint();
+      if(position>=0)positionViewport(position,true);
+      else $('scaleScrolly').scrollLeft=0;
+      saveSettings();
+    });
     $('scaleType').addEventListener('change',()=>{renderScale();saveSettings();});
     $('minorVariant').addEventListener('change',()=>{renderScale();saveSettings();});
     $('timbre').addEventListener('change',()=>{stop();saveSettings();});

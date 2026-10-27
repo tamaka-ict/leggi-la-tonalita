@@ -1,6 +1,6 @@
 'use strict';
-// v2.1: all application logic is embedded in index.html.
-const CACHE='tonalita-v2.1.0';
+// v2.2: all application logic is embedded in index.html.
+const CACHE='tonalita-v2.2.0';
 const CORE=['./','./index.html','./manifest.webmanifest','./icon.svg'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(names=>Promise.all(names.filter(n=>n.startsWith('tonalita-')&&n!==CACHE).map(n=>caches.delete(n)))).then(()=>self.clients.claim())));

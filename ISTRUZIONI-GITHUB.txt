@@ -1,29 +1,15 @@
-LEGGI LA TONALITÀ 2.1 — AGGIORNAMENTO DEL TUO GITHUB
+LEGGI LA TONALITÀ — AGGIORNAMENTO v2.2
 
-Repository: https://github.com/tamaka-ict/leggi-la-tonalita
-Sito pubblico: https://tamaka-ict.github.io/leggi-la-tonalita/
+1. Apri https://github.com/tamaka-ict/leggi-la-tonalita e accedi.
+2. Vai sul ramo main e scegli Add file > Upload files.
+3. Decomprimi il pacchetto ZIP sul tuo PC. Trascina nel sito GitHub i SEI FILE estratti (non lo ZIP e non la cartella).
+4. Sostituisci i file con nomi identici. Conferma Commit changes.
+5. Attendi che GitHub Pages completi la pubblicazione.
+6. Apri https://tamaka-ict.github.io/leggi-la-tonalita/?v=22 e controlla che sia indicata Versione 2.2.
+7. Vai in Impara > Visualizzazione durante l'ascolto > Schermata fissa per 5 note. Premi Ascolta.
 
-1. Estrai il file ZIP sul computer.
-2. Accedi al repository GitHub e vai sul ramo main.
-3. Se vuoi, fai un backup con Code > Download ZIP.
-4. Seleziona Add file > Upload files.
-5. Carica i file estratti nella radice del repository (in particolare index.html e sw.js).
-6. Conferma Commit changes direttamente su main.
-7. Attendi la pubblicazione, quindi apri il sito e cerca 'Versione 2.1' in alto.
-8. Apri Impara, verifica le 15 note, premi Prova il suono di una nota e Ascolta.
-9. Durante la riproduzione cambia i BPM e verifica che la velocità cambi.
+Atteso: il pentagramma cambia inquadratura soltanto dopo 5 note (alla sesta e all'undicesima); le note continuano a illuminarsi una alla volta. La barra di avanzamento continua a muoversi.
 
-Non creare un nuovo repository e non modificare Settings > Pages.
-Il collegamento pubblico rimane lo stesso.
+Il link non cambia. Non è necessario modificare Settings > Pages.
 
-I vecchi file app.js e scale.js non sono più necessari: il nuovo index.html
-incorpora tutta la logica. Possono restare nella cartella di GitHub senza
-provocare problemi; eventualmente puoi eliminarli in seguito.
-
-Se compare ancora la versione 2.0, apri:
-https://tamaka-ict.github.io/leggi-la-tonalita/?v=21
-oppure chiudi e riapri il browser con connessione a Internet.
-Evita di cancellare i dati del sito se vuoi conservare le statistiche.
-
-In caso di mancanza di audio, prova il pulsante 'Prova il suono di una nota'
-e verifica il volume multimediale del telefono.
+NOTA: i file app.js e scale.js eventualmente rimasti dalla versione 2.0 sono inutilizzati, ma possono restare nel repository.
