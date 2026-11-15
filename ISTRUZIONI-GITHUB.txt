@@ -1,15 +1,19 @@
-LEGGI LA TONALITÀ — AGGIORNAMENTO v2.2
+LEGGI LA TONALITA' 3.0 - AGGIORNAMENTO GITHUB
 
-1. Apri https://github.com/tamaka-ict/leggi-la-tonalita e accedi.
-2. Vai sul ramo main e scegli Add file > Upload files.
-3. Decomprimi il pacchetto ZIP sul tuo PC. Trascina nel sito GitHub i SEI FILE estratti (non lo ZIP e non la cartella).
-4. Sostituisci i file con nomi identici. Conferma Commit changes.
-5. Attendi che GitHub Pages completi la pubblicazione.
-6. Apri https://tamaka-ict.github.io/leggi-la-tonalita/?v=22 e controlla che sia indicata Versione 2.2.
-7. Vai in Impara > Visualizzazione durante l'ascolto > Schermata fissa per 5 note. Premi Ascolta.
+1. Vai su https://github.com/tamaka-ict/leggi-la-tonalita
+2. Fai eventualmente un backup con Code > Download ZIP.
+3. Estrai il nuovo ZIP sul computer.
+4. Con il repository su main: Add file > Upload files.
+5. Carica nella radice TUTTI E SEI i file estratti (non caricare lo ZIP).
+6. Premi Commit changes (direttamente su main).
+7. Lascia invariato Settings > Pages.
+8. Dopo la pubblicazione apri:
+   https://tamaka-ict.github.io/leggi-la-tonalita/?v=30
+9. Verifica la dicitura Versione 3.0 e la sezione Percorso.
 
-Atteso: il pentagramma cambia inquadratura soltanto dopo 5 note (alla sesta e all'undicesima); le note continuano a illuminarsi una alla volta. La barra di avanzamento continua a muoversi.
-
-Il link non cambia. Non è necessario modificare Settings > Pages.
-
-NOTA: i file app.js e scale.js eventualmente rimasti dalla versione 2.0 sono inutilizzati, ma possono restare nel repository.
+La famiglia continua a usare il vecchio link pubblico.
+Il percorso si sblocca con 5 risposte corrette su 6 per livello.
+Progressi salvati separatamente nel browser di ogni familiare.
+I vecchi app.js e scale.js non vengono piu' utilizzati e possono rimanere.
+Per problemi di cache: ricarica il sito con ?v=30; non cancellare i dati
+salvati sul dispositivo se vuoi preservare i progressi.

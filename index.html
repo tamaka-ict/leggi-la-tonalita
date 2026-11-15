@@ -23,10 +23,66 @@
 .helper{font-size:12px;color:#647c90;line-height:1.5}
 .audio-headline{font-size:15px;font-weight:700;margin:0}
 @media(max-width:420px){.music-options{gap:8px}.audiobar button{padding:10px 8px;font-size:13px}}
-</style></head><body><main><header><div><h1>♫ Leggi la tonalità</h1><div class="muted">Allenamento di lettura e ascolto musicale</div></div><span class="pill">Versione 2.2</span></header><div class="card"><div class="tabs"><button class="tab active" id="practiceTab">Allenati</button><button class="tab" id="learnTab">Impara</button></div><div class="controls"><label>Chiave musicale<select id="clef"><option value="g2">Sol · violino (2ª linea)</option><option value="f4">Fa · basso (4ª linea)</option><option value="f3">Fa · baritono (3ª linea)</option><option value="c1">Do · soprano (1ª linea)</option><option value="c2">Do · mezzosoprano (2ª linea)</option><option value="c3">Do · contralto (3ª linea)</option><option value="c4">Do · tenore (4ª linea)</option><option value="c5">Do · baritono (5ª linea)</option><option value="g1">Sol · francese (1ª linea)</option></select></label><label>Tonalità<select id="mode"><option value="major">Maggiori</option><option value="minor">Minori</option><option value="both">Maggiori e minori</option></select></label><label class="wide">Difficoltà<select id="level"><option value="2">Principiante · fino a 2 alterazioni</option><option value="4">Intermedio · fino a 4 alterazioni</option><option value="7">Avanzato · fino a 7 alterazioni</option></select></label></div></div>
+/* Accademia v3: layout mobile-first, esercizi e sblocco progressivo */
+.path-top{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.progress-track{height:10px;border-radius:99px;background:#e0eaf3;overflow:hidden;margin:9px 0 4px}
+.progress-fill{height:100%;background:#237a69;transition:width .18s ease}
+.levels{display:grid;gap:10px;margin-top:14px}
+.level-card{width:100%;display:flex;align-items:center;gap:12px;text-align:left;border:1px solid #cfdeeb;background:#fff;border-radius:14px;padding:14px;color:#18364c}
+.level-card:disabled{opacity:.62;cursor:not-allowed;background:#f2f5f8}
+.level-card.current{border-color:#197e9e;box-shadow:inset 3px 0 #197e9e}
+.level-card.finished{background:#eff8f5;border-color:#9bcbbb}
+.level-number{flex:0 0 38px;height:38px;border-radius:12px;background:#e5eef8;display:grid;place-items:center;font-weight:800;font-size:17px}
+.level-card.finished .level-number{background:#d5eee3;color:#14704c}
+.level-card h3{margin:0 0 4px;font-size:16px}
+.level-card p{margin:0;font-size:12px;color:#62788a;line-height:1.4}
+.path-actions{display:flex;gap:9px;flex-wrap:wrap}
+.path-actions button{border:1px solid #adc7d6;background:#fff;padding:10px 12px;border-radius:10px;color:#155782;font-weight:650}
+.path-actions button.cta{border-color:#125789;background:#125789;color:#fff}
+.course-kicker{font-size:12px;color:#24796d;letter-spacing:.05em;text-transform:uppercase;font-weight:800}
+.course-explanation{font-size:14px;color:#345067;line-height:1.7}
+.course-explanation p{margin:.4em 0 1em}
+.course-explanation ul{padding-left:20px}
+.course-explanation li{margin-bottom:5px}
+.course-example{padding:12px;border-radius:12px;background:#f1f6fa;border:1px solid #e1eaf2;margin:10px 0}
+.course-chart{width:100%;overflow-x:auto;padding:8px;background:#fafcff;border:1px solid #dfe9f2;border-radius:12px;margin:12px 0}
+.course-chart svg{width:100%;min-width:280px;max-height:220px}
+.course-quiz{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:15px 0}
+.course-quiz button{background:white;color:#173a52;padding:13px 7px;border:1px solid #c6d8e4;border-radius:11px;font-size:15px;min-height:52px;font-weight:650;overflow-wrap:anywhere}
+.course-quiz button.right{background:#e2f5ed;border:2px solid #178354;color:#0d6140}
+.course-quiz button.wrong{background:#fff0f1;border:2px solid #ce565d;color:#a42c32}
+.course-quiz button:disabled{cursor:default}
+.course-feedback{background:#f1f7fa;border-radius:11px;padding:13px;font-size:14px;line-height:1.55;margin:11px 0}
+.course-feedback b{display:block;margin-bottom:4px}
+.course-row{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
+.course-tip{background:#f2f7fb;border-radius:11px;padding:12px;margin:10px 0;font-size:14px;line-height:1.6}
+#circleWheel{width:100%;max-width:380px;margin:0 auto;display:block}
+#circleWheel .keypoint{cursor:pointer}
+#circleWheel .keypoint:focus{outline:2px solid #3484b6}
+.course-builder{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin:12px 0}
+.course-builder label{text-align:center;font-weight:700;font-size:12px;color:#2a5168}
+.course-builder select{padding:8px 1px;min-width:0;width:100%;font-size:13px}
+.course-meter{font-size:13px;color:#3a627c}
+.course-toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:11px 0}
+.course-toolbar select{width:auto;max-width:100%;margin:0}
+button.mini-btn{background:#fff;border:1px solid #a9c5d7;border-radius:9px;color:#135783;padding:9px 11px;font-weight:650;font-size:13px}
+button.mini-btn:disabled{opacity:.5}
+.pulse-head{font-weight:800;color:#1a687e;margin-top:6px}
+@media(max-width:390px){.course-builder{gap:2px}.course-builder label{font-size:11px}.course-builder select{font-size:12px}.level-card{padding:12px}.course-quiz button{font-size:14px}}
+#appControls.course-only{grid-template-columns:1fr}#appControls.course-only label:not(:first-child){display:none}header .pill{display:inline-block}@media(max-width:420px){header .pill{padding:5px;font-size:10px;white-space:nowrap}}
+</style></head><body><main><header><div><h1>♫ Leggi la tonalità</h1><div class="muted">Allenamento di lettura e ascolto musicale</div></div><span class="pill">Versione 3.0</span></header><div class="card"><div class="tabs"><button class="tab active" id="practiceTab">Allenati</button><button class="tab" id="learnTab">Impara</button><button class="tab" id="courseTab">Percorso</button></div><div class="controls" id="appControls"><label>Chiave musicale<select id="clef"><option value="g2">Sol · violino (2ª linea)</option><option value="f4">Fa · basso (4ª linea)</option><option value="f3">Fa · baritono (3ª linea)</option><option value="c1">Do · soprano (1ª linea)</option><option value="c2">Do · mezzosoprano (2ª linea)</option><option value="c3">Do · contralto (3ª linea)</option><option value="c4">Do · tenore (4ª linea)</option><option value="c5">Do · baritono (5ª linea)</option><option value="g1">Sol · francese (1ª linea)</option></select></label><label>Tonalità<select id="mode"><option value="major">Maggiori</option><option value="minor">Minori</option><option value="both">Maggiori e minori</option></select></label><label class="wide">Difficoltà<select id="level"><option value="2">Principiante · fino a 2 alterazioni</option><option value="4">Intermedio · fino a 4 alterazioni</option><option value="7">Avanzato · fino a 7 alterazioni</option></select></label></div></div>
+<section id="course" class="hide">
+<div id="courseHome">
+  <div class="card"><div class="path-top"><div><div class="course-kicker">Accademia musicale · 6 livelli</div><h2 style="margin:5px 0">Il tuo percorso</h2></div><strong id="courseOverall" class="mono">0 / 6</strong></div>
+  <div class="progress-track"><div class="progress-fill" id="courseProgress" style="width:0"></div></div>
+  <p class="muted">Completa almeno 5 esercizi su 6 per sbloccare il livello seguente. Ogni livello superato resta disponibile per ripassare.</p><div id="courseLevels" class="levels"></div></div>
+  <div class="card"><h2>Ripasso mirato</h2><p class="muted" id="reviewDetail">Gli esercizi sbagliati vengono conservati sul dispositivo e riproposti qui, dando precedenza agli argomenti più difficili.</p><div class="path-actions"><button id="reviewStart" class="cta">Ripassa gli errori</button><button id="academyReset">Azzera il percorso</button></div></div>
+</div>
+<div id="courseDetail" class="hide"><div class="card"><div class="course-row"><button class="smallbtn" id="courseBack">← Torna ai livelli</button><span id="courseBadge" class="course-kicker"></span></div><h2 id="courseTitle" style="margin-top:12px"></h2><p class="muted" id="courseSubtitle"></p></div><div id="courseLesson" class="card"></div><div class="card" id="courseExamIntro"><h2>Verifica di livello</h2><p class="muted">6 esercizi · almeno 5 risposte corrette per superare il livello. Gli errori saranno riproposti nel ripasso mirato.</p><button id="courseBegin" class="primary">Inizia la verifica</button></div><div class="card hide" id="courseExam"><div class="course-row"><strong id="courseExamTitle"></strong><span class="muted" id="courseExamCount"></span></div><div class="progress-track"><div id="examProgress" class="progress-fill" style="width:0"></div></div><div id="courseQuestion" style="margin-top:14px"></div><div id="courseAnswers" class="course-quiz"></div><div id="courseFeedback" class="course-feedback hide" role="status" aria-live="polite"></div><button id="courseNext" class="primary hide">Continua →</button></div></div>
+</section>
 <section id="practice"><div class="card stats"><div><div class="muted">Corrette</div><strong id="score" class="mono">0/0</strong></div><div><div class="muted">Precisione</div><strong id="accuracy" class="mono">—</strong></div><div><div class="muted">Serie</div><strong id="streak" class="mono">0</strong></div></div><div class="card"><div class="headingrow"><b class="muted" id="number">ESERCIZIO 1</b><button class="smallbtn" id="reset">Azzera statistiche</button></div><div class="staffwrap"><svg id="staff" viewBox="0 0 360 204" role="img" aria-label="Pentagramma e armatura"></svg></div><div class="center"><h2 id="question">Qual è la tonalità maggiore?</h2><div class="muted">Osserva l'armatura di chiave sul pentagramma</div></div><div class="answers" id="answers"></div><div class="result hide" id="feedback" role="status" aria-live="polite"></div><button class="primary hide" id="next">Prossimo esercizio →</button></div></section>
 <section id="learn" class="hide"><div class="card guide"><h2>Come riconoscere una tonalità</h2><p>L'<strong>armatura di chiave</strong> è l'insieme di diesis o bemolli subito dopo la chiave. Conta le alterazioni e riconosci la tonalità maggiore e la relativa minore.</p><div class="twocol"><div class="tip"><b>♯ Diesis</b><br>Fa · Do · Sol · Re · La · Mi · Si<br><small>La tonica maggiore è un semitono sopra l'ultimo diesis.</small></div><div class="tip"><b>♭ Bemolli</b><br>Si · Mi · La · Re · Sol · Do · Fa<br><small>Con almeno 2 bemolli, la tonica maggiore è il penultimo bemolle.</small></div></div><p>Eccezioni: con <b>un bemolle</b> si ha Fa maggiore; con <b>zero alterazioni</b> Do maggiore e La minore. La relativa minore si trova tre semitoni sotto la tonica maggiore.</p><p class="muted">Un'armatura, da sola, non basta per distinguere un brano maggiore dal relativo minore: occorre considerare anche il contesto musicale.</p></div><div class="card" id="scaleCard">
-  <div class="music-head"><h2 style="margin:0">🎼 Ascolta e segui la scala</h2><span class="pill" style="display:inline-block">Audio sincronizzato · v2.2</span></div>
+  <div class="music-head"><h2 style="margin:0">🎼 Ascolta e segui la scala</h2><span class="pill" style="display:inline-block">Audio sincronizzato · v3.0</span></div>
   <p class="muted">Scegli una tonalità, premi <b>Ascolta</b> e segui la linea arancione sul pentagramma: indica la nota suonata. Puoi anche toccare una nota per ascoltarla da sola.</p>
   <div class="music-options">
     <label class="wide">Tonalità studiata<select id="studyKeySelect"></select></label>
@@ -100,7 +156,7 @@ function newQuestion(forced){const available=pool();let k=forced||available[Math
 function answer(value){if(answered)return;answered=true;const good=value===current.correct;progress.total++;if(good){progress.correct++;progress.streak++;}else progress.streak=0;stats();save();for(let b of $('answers').children){b.disabled=true;if(b.textContent===current.correct)b.classList.add('good');else if(b.textContent===value)b.classList.add('bad');}const k=current.key;const f=$('feedback');f.replaceChildren();let b=document.createElement('b');b.textContent=(good?'✓ Risposta esatta':'✕ Risposta da correggere')+': '+current.correct+' '+(current.kind==='major'?'maggiore':'minore');const p=document.createElement('div');p.textContent='Armatura: '+(k.n===0?'nessuna alterazione':k.n+' '+(k.s==='#'?'diesis':'bemolli'))+'. Maggiore: '+k.major+'; relativa minore: '+k.minor+'.';f.append(b,p);f.classList.remove('hide');$('next').classList.remove('hide');}
 function study(){const k=selectedKey;$('studyTitle').textContent=k.major+' maggiore / '+k.minor+' minore';renderStaff('studyStaff',k);$('studyDescription').textContent=k.n?'Alterazioni in armatura: '+(k.s==='#'?['Fa','Do','Sol','Re','La','Mi','Si']:['Si','Mi','La','Re','Sol','Do','Fa']).slice(0,k.n).map(x=>x+(k.s==='#'?'♯':'♭')).join(' · '):'Nessuna alterazione in armatura.';for(let row of $('table').children)row.classList.toggle('selected',Number(row.dataset.index)===keys.indexOf(k));window.dispatchEvent(new CustomEvent('tonality:study',{detail:{key:k,clef:$('clef').value}}));}
 function buildTable(){for(let [i,k] of keys.entries()){let row=document.createElement('button');row.className='tablerow';row.dataset.index=i;for(let txt of [k.n===0?'Nessuna':k.n+' '+(k.s==='#'?'♯':'♭'),k.major,k.minor]){let span=document.createElement('span');span.textContent=txt;row.append(span);}row.onclick=()=>{selectedKey=k;study();};$('table').append(row);}}
-function tab(learn){$('practice').classList.toggle('hide',learn);$('learn').classList.toggle('hide',!learn);$('practiceTab').classList.toggle('active',!learn);$('learnTab').classList.toggle('active',learn);window.dispatchEvent(new CustomEvent('tonality:tab',{detail:{learn}}));}
+function tab(learn){$('appControls').classList.remove('course-only');$('course').classList.add('hide');$('courseTab').classList.remove('active');$('practice').classList.toggle('hide',learn);$('learn').classList.toggle('hide',!learn);$('practiceTab').classList.toggle('active',!learn);$('learnTab').classList.toggle('active',learn);window.dispatchEvent(new CustomEvent('tonality:tab',{detail:{learn}}));}
 $('practiceTab').onclick=()=>tab(false);$('learnTab').onclick=()=>tab(true);$('next').onclick=()=>newQuestion();$('reset').onclick=()=>{progress={correct:0,total:0,streak:0};qIndex=0;stats();save();newQuestion();};$('studyPractice').onclick=()=>{tab(false);newQuestion(selectedKey);};$('clef').onchange=()=>{if(current)renderStaff('staff',current.key);study();save();};for(let id of ['mode','level'])$(id).onchange=()=>{save();newQuestion();};buildTable();study();stats();newQuestion();if('serviceWorker' in navigator&&location.protocol==='https:')navigator.serviceWorker.register('./sw.js').catch(()=>{});
 
 </script>
@@ -498,6 +554,422 @@ function updateCursor(fraction,index){
   init();
   // Expose only musical generation for repeatable automated tests, not user data.
   window.TonalityScaleTest={makeScale,parseName,sigAlterations,intervals};
+})();
+
+</script><script>
+'use strict';
+/* Accademia · nessuna dipendenza esterna · le risposte vengono salvate solo localmente */
+(() => {
+  const el=id=>document.getElementById(id);
+  const L=['Do','Re','Mi','Fa','Sol','La','Si'], CH=[0,2,4,5,7,9,11];
+  const SH=[3,0,4,1,5,2,6],FL=[6,2,5,1,4,0,3];
+  const TYPES={major:[0,2,4,5,7,9,11],natural:[0,2,3,5,7,8,10],harmonic:[0,2,3,5,7,8,11],melodic:[0,2,3,5,7,9,11]};
+  const signs={[-2]:'𝄫',[-1]:'♭',[0]:'',[1]:'♯',[2]:'𝄪'};
+  const lvl=[
+    {title:'Leggere le note',subtitle:'Chiavi di Sol, Fa e Do · lettura diretta',goal:'Leggi le note sul pentagramma nella chiave selezionata.'},
+    {title:'Armature e tonalità',subtitle:'Circolo delle quinte · relative e omonime',goal:'Collega armatura, tonica maggiore, relativa minore e tonalità omonima.'},
+    {title:'Costruire le scale',subtitle:'Toni e semitoni · scale maggiori e minori',goal:'Riconosci l’alterazione corretta di ogni grado e costruisci una scala.'},
+    {title:'Riconoscere gli intervalli',subtitle:'Distanze tra note · ascolto melodico e armonico',goal:'Identifica le qualità e le distanze degli intervalli scritti.'},
+    {title:'Accordi e armonia',subtitle:'Triadi · gradi · cadenze',goal:'Riconosci le triadi diatoniche e il ruolo delle cadenze.'},
+    {title:'Analisi e trasposizione',subtitle:'Tonalità reale · frammenti · trasporto',goal:'Analizza brevi frammenti e trasponi melodie mantenendone gli intervalli.'}
+  ];
+  const C=window.TonalityApp.keys;
+  const mod=(n,d)=>(n%d+d)%d;
+  const safe=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const keyLabel=(k,mode='major')=>k[mode]+' '+(mode==='major'?'maggiore':'minore');
+  const name=(letter,alter=0)=>L[mod(letter,7)]+(signs[alter]??'');
+  const pitchLabel=p=>L[mod(p,7)];
+  function parse(n){
+    const i=L.findIndex(x=>n.startsWith(x)&&["",'♯','♭','𝄪','𝄫'].includes(n.slice(x.length)));
+    if(i<0)throw Error('Nota non riconosciuta: '+n);
+    const suff=n.slice(L[i].length);return {i,acc:suff==='♯'?1:suff==='♭'?-1:suff==='𝄪'?2:suff==='𝄫'?-2:0};
+  }
+  function alterations(k){const a=Array(7).fill(0);for(let i=0;i<k.n;i++)a[(k.s==='#'?SH:FL)[i]]=k.s==='#'?1:-1;return a;}
+  function scale(k,kind,oct=4){const n=parse(k[kind==='major'?'major':'minor']);const step=TYPES[kind];
+    const tm=(oct+1)*12+CH[n.i]+n.acc;
+    return Array.from({length:8},(_,deg)=>{
+      const d=oct*7+n.i+deg,letter=mod(d,7),o=Math.floor(d/7),m=tm+(deg===7?12:step[deg]);
+      const a=m-((o+1)*12+CH[letter]);
+      return {letter,oct:o,pitch:d,alter:a,midi:m,label:name(letter,a),degree:deg};
+    });
+  }
+  const sounds=[{semi:1,degree:1,label:'Seconda minore'},{semi:2,degree:1,label:'Seconda maggiore'},{semi:3,degree:2,label:'Terza minore'},{semi:4,degree:2,label:'Terza maggiore'},{semi:5,degree:3,label:'Quarta giusta'},{semi:6,degree:3,label:'Quarta aumentata'},{semi:7,degree:4,label:'Quinta giusta'},{semi:8,degree:5,label:'Sesta minore'},{semi:9,degree:5,label:'Sesta maggiore'},{semi:10,degree:6,label:'Settima minore'},{semi:11,degree:6,label:'Settima maggiore'},{semi:12,degree:7,label:'Ottava giusta'}];
+  let mem={passed:Array(6).fill(false),wrong:{},attempts:Array(6).fill(0)};
+  try{const v=JSON.parse(localStorage.getItem('tonality-academy-v3'));
+    if(v&&Array.isArray(v.passed)&&v.passed.length===6){mem.passed=v.passed.map(Boolean);mem.wrong=(v.wrong&&typeof v.wrong==='object')?v.wrong:{};mem.attempts=Array.isArray(v.attempts)?v.attempts.slice(0,6):mem.attempts;}}
+  catch{}
+  function persist(){try{localStorage.setItem('tonality-academy-v3',JSON.stringify(mem));}catch{}}
+  function unlocked(i){return i===0||mem.passed.slice(0,i).every(Boolean);}
+  function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+  function options(correct,pool){return shuffle([correct,...shuffle([...new Set(pool.filter(x=>x!==correct))]).slice(0,3)]);}
+  function noteOptions(correct){const p=['Do','Re','Mi','Fa','Sol','La','Si'];return options(correct,p);}
+  let selected=-1,quiz=null,quizType='exam',qIdx=0,score=0,answered=false,playContext=null,voices=[],frame=0;
+  const taskSets=Array.from({length:6},()=>[]);
+  function add(level,id,kind,data){taskSets[level].push({id,level,kind,data});}
+  // Livello 1: la chiave corrente determina la lettura, non si finge che la stessa nota valga in tutte le chiavi.
+  for(let p=0;p<=10;p++)add(0,'note-'+p,'note',{position:p});
+  // Livello 2: le 15 armature, relative, omonime e progressione per quinte.
+  C.forEach((k,i)=>{
+    add(1,'signature-'+i,'signature',{key:i});add(1,'relative-'+i,'relative',{key:i});
+    if(i<13)add(1,'reverse-'+i,'reverse',{key:i});
+  });
+  C.filter(k=>k.n<=4).forEach(k=>add(1,'parallel-'+k.major,'parallel',{key:C.indexOf(k)}));
+  const ring=['Do','Sol','Re','La','Mi','Si','Fa♯','Re♭','La♭','Mi♭','Si♭','Fa'];
+  for(let i=0;i<ring.length-1;i++)add(1,'fifth-'+i,'fifth',{at:i});
+  // Livello 3: non basta la tonica; le note corrette sono calcolate per grafia diatonica, anche con doppi diesis.
+  const sampleKeys=[0,1,2,3,4,8,9,10,11,12,13];
+  for(const ki of sampleKeys)for(const kind of ['major','natural','harmonic','melodic'])for(const d of [2,3,5,6]){
+    if(kind==='major'&&ki>=12)continue;
+    add(2,`scale-${ki}-${kind}-${d}`,'scale',{key:ki,kind,degree:d});
+  }
+  // Livello 4: qualità + numero dell'intervallo, non solo differenza di semitoni.
+  sounds.forEach((v,i)=>add(3,'interval-'+i,'interval',{at:i}));
+  // Livello 5: triadi di tutte le posizioni della scala maggiore.
+  for(const ki of [0,1,2,8,9])for(let d=0;d<7;d++){
+    add(4,`quality-${ki}-${d}`,'triadQuality',{key:ki,degree:d});
+    add(4,`chord-${ki}-${d}`,'triadNotes',{key:ki,degree:d});
+  }
+  for(const kind of ['authentic','deceptive','plagal','half'])add(4,'cadence-'+kind,'cadence',{kind});
+  // Livello 6: due relative con la stessa armatura: la sensibile e la cadenza danno indizi diversi.
+  for(const ki of [0,1,2,3,8,9,10,11])for(const kind of ['major','minor'])add(5,`analysis-${ki}-${kind}`,'analysis',{key:ki,kind});
+  for(const [i,pair] of [['Do','Re'],['Sol','La'],['Fa','Si♭'],['Re','Mi'],['Si♭','Do'],['Mi♭','Fa'],['La','Si']].entries())add(5,'transpose-'+i,'transpose',{from:pair[0],to:pair[1]});
+  const findKey=major=>C.find(x=>x.major===major);
+  const roman=['I','ii','iii','IV','V','vi','vii°'];
+  function cClef(){return clefs[el('clef').value];}
+  function cOct(letter,aim=1){const b=cClef().bottom;return [2,3,4,5].sort((a,z)=>Math.abs(a*7+letter-b-aim)-Math.abs(z*7+letter-b-aim))[0];}
+  function prepare(t){
+    const d=t.data,kind=t.kind;let q='',opts=[],right='',why='',hint='',scoreNotes=null,key=null,audioMode='melodic',context='';
+    if(kind==='note'){
+      const pitch=cClef().bottom+d.position;
+      const noteOct=Math.floor(pitch/7), noteLetter=mod(pitch,7);
+      right=pitchLabel(pitch);q='Quale nota è indicata sul pentagramma?';opts=noteOptions(right);
+      scoreNotes=[{pitch,midi:(noteOct+1)*12+CH[noteLetter],alter:0,label:right}];
+      why=`In questa chiave, la posizione indicata corrisponde a ${right}. Le linee e gli spazi si contano dal basso.`;
+      hint='Parti dalla linea di riferimento della chiave e conta le posizioni diatoniche.';
+    }else if(kind==='signature'){
+      key=C[d.key];right=keyLabel(key);q='Qual è la tonalità maggiore indicata dall’armatura?';opts=options(right,C.map(k=>keyLabel(k)));
+      why=`${key.n===0?'Nessuna alterazione':key.n+' '+(key.s==='#'?'diesis':'bemolli')}: ${keyLabel(key)} e ${key.minor} minore hanno la stessa armatura.`;
+      hint='Per i diesis, considera la nota immediatamente sopra l’ultimo diesis; per i bemolli, il penultimo (salvo un bemolle).';
+    }else if(kind==='relative'||kind==='reverse'){
+      key=C[d.key];if(kind==='relative'){
+        right=key.minor+' minore';q=`Qual è la relativa minore di ${keyLabel(key)}?`;
+        opts=options(right,C.map(k=>k.minor+' minore'));
+      }else{
+        right=keyLabel(key);q=`Qual è la relativa maggiore di ${key.minor} minore?`;
+        opts=options(right,C.map(k=>keyLabel(k)));
+      }
+      why=`${key.major} maggiore e ${key.minor} minore condividono la stessa armatura. La relativa minore è sul VI grado della maggiore (tre semitoni più in basso).`;
+      hint='Le tonalità relative condividono l’armatura, non la tonica.';
+    }else if(kind==='parallel'){
+      key=C[d.key];right=key.major+' minore';q=`Qual è la tonalità minore omonima di ${key.major} maggiore?`;
+      opts=options(right,C.map(k=>k.major+' minore'));
+      why='Le tonalità omonime hanno la stessa tonica ma armature generalmente diverse. Non confonderle con le relative.';
+      hint='Mantieni invariata la nota tonica; cambia solo il modo.';
+    }else if(kind==='fifth'){
+      const a=ring[d.at],b=ring[d.at+1];right=b+' maggiore';q=`Nel circolo delle quinte, quale tonalità segue ${a} maggiore procedendo in senso orario?`;
+      opts=options(right,ring.map(n=>n+' maggiore'));
+      why=`Procedendo in senso orario da ${a} si arriva a ${b}. In alcuni punti il circolo usa la grafia enarmonica per contenere il numero di alterazioni.`;
+      hint='A ogni spostamento in senso orario, la tonica sale di una quinta giusta.';
+    }else if(kind==='scale'){
+      key=C[d.key];let base=scale(key,d.kind==='major'?'major':d.kind);
+      const v=base[d.degree];right=v.label;
+      const typ=d.kind==='major'?'maggiore':'minore '+({natural:'naturale',harmonic:'armonica',melodic:'melodica'}[d.kind]);
+      const tonic=key[d.kind==='major'?'major':'minor'];
+      q=`Nella scala di ${tonic} ${typ}, qual è la ${d.degree+1}ª nota (scala ascendente)?`;
+      opts=options(right,[-2,-1,0,1,2].map(a=>name(v.letter,a)));
+      why=`La sequenza ascendente produce ${base.slice(0,7).map(x=>x.label).join(' · ')}. Sul ${d.degree+1}° grado serve ${right}.`;
+      hint='Conserva il nome della nota previsto dalla successione diatonica e calcola l’alterazione dai toni/semitoni.';
+      scoreNotes=base.slice(0,5);context='Scala ascendente · prime cinque note';
+    }else if(kind==='interval'){
+      const v=sounds[d.at],oct=cOct(0,2),root=oct*7,rootMidi=(oct+1)*12;
+      const p2=root+v.degree,o2=Math.floor(p2/7),l2=mod(p2,7),semNatural=(o2+1)*12+CH[l2],alt=rootMidi+v.semi-semNatural;
+      scoreNotes=[{pitch:root,midi:rootMidi,alter:0,label:'Do'}, {pitch:p2,midi:rootMidi+v.semi,alter:alt,label:name(l2,alt)}];
+      q='Quale intervallo separa le due note (dalla più grave alla più acuta)?';right=v.label;opts=options(right,sounds.map(s=>s.label));
+      why=`Distanza di ${v.semi} semitoni e ${v.degree+1} gradi diatonici (estremi inclusi): ${right.toLowerCase()}.`;
+      hint='Conta prima i nomi delle note per trovare il numero, poi i semitoni per stabilire la qualità.';
+    }else if(kind==='triadQuality'||kind==='triadNotes'){
+      key=C[d.key];let ss=scale(key,'major');const ix=d.degree;
+      let chord=[ix,ix+2,ix+4].map(v=>({...ss[v%7],pitch:ss[v%7].pitch+(v>=7?7:0),midi:ss[v%7].midi+(v>=7?12:0)}));
+      // ss[7] is the octave of the tonic, so for wrapped chord notes use its octave.
+      const root=ss[ix], rootMidi=root.midi;
+      chord=[0,2,4].map(delta=>{
+        const at=ix+delta,degree=at%7,p=ss[degree],octShift=Math.floor(at/7);
+        return {...p,pitch:p.pitch+octShift*7,midi:p.midi+12*octShift};
+      });
+      scoreNotes=chord;audioMode='chord';context=`Accordo sul ${ix+1}° grado`;
+      const qualitative=['maggiore','minore','minore','maggiore','maggiore','minore','diminuita'][ix];
+      if(kind==='triadQuality'){
+        right=qualitative;q=`Nella tonalità di ${keyLabel(key)}, che tipo di triade nasce sul ${ix+1}° grado (${roman[ix]})?`;
+        opts=options(right,['maggiore','minore','diminuita','aumentata']);
+      }else{
+        right=chord.map(x=>x.label).join(' – ');
+        q=`Quali note formano la triade sul ${ix+1}° grado di ${keyLabel(key)}?`;
+        let pool=Array.from({length:7},(_,i)=>[0,2,4].map(delta=>{
+          const at=i+delta,p=ss[at%7];return p.label;
+        }).join(' – '));opts=options(right,pool);
+      }
+      why=`${roman[ix]}: ${chord.map(x=>x.label).join(' – ')}. Triade ${qualitative} (costruita sovrapponendo due terze).`;
+      hint='Prendi il grado indicato, salta una nota della scala, poi saltane un’altra.';
+    }else if(kind==='cadence'){
+      const cad={authentic:['V → I','autentica','La dominante risolve sulla tonica: cadenza autentica.'],deceptive:['V → vi','d’inganno','La dominante risolve sul VI grado invece che sulla tonica: cadenza d’inganno.'],plagal:['IV → I','plagale','Dal sottodominante alla tonica: cadenza plagale.'],half:['I → V','sospesa','La frase termina sulla dominante: cadenza sospesa (semicadenza).']}[d.kind];
+      q=`Come si chiama la cadenza ${cad[0]} in una tonalità maggiore?`;right=cad[1];opts=options(right,['autentica','d’inganno','plagale','sospesa']);why=cad[2];hint='Osserva il grado dell’accordo conclusivo: tonica, dominante o sostituzione della tonica.';
+    }else if(kind==='analysis'){
+      key=C[d.key];const sk=d.kind==='major'?'major':'harmonic';const s=scale(key,sk),motif=[s[0],s[2],s[4],s[6],s[7]];
+      scoreNotes=motif;context='Motivo originale con cadenza dominante → tonica';
+      right=d.kind==='major'?keyLabel(key):key.minor+' minore';
+      q='L’armatura è comune alle tonalità relative. Qual è la tonalità più probabile di questo frammento, considerando la risoluzione finale sulla tonica?';
+      opts=options(right,[keyLabel(key),key.minor+' minore',...C.slice(0,8).flatMap(x=>[keyLabel(x),x.minor+' minore'])]);
+      why=`La frase si conclude su ${s[7].label}, tonica di ${right}; la terza ${s[2].label} e la sensibile ${s[6].label} aiutano a distinguerla dalla relativa. La minore armonica può presentare il VII grado innalzato fuori armatura.`;
+      hint='L’armatura da sola non decide il modo: considera la terza, la sensibile e la nota finale.';
+    }else if(kind==='transpose'){
+      const start=findKey(d.from),end=findKey(d.to);const a=scale(start,'major'),b=scale(end,'major');
+      scoreNotes=[a[0],a[2],a[4]];context='Motivo iniziale';
+      const x=mod(parse(d.to).i-parse(d.from).i,7);
+      const shift=mod((b[0].midi-a[0].midi),12);
+      right=[b[0],b[2],b[4]].map(n=>n.label).join(' – ');
+      q=`Trasponi ${a[0].label} – ${a[2].label} – ${a[4].label} da ${d.from} maggiore a ${d.to} maggiore (intervallo ascendente di ${shift} semitoni). Quali diventano le note?`;
+      opts=options(right,C.filter(k=>k.n<=5).map(k=>scale(k,'major').filter((_,i)=>[0,2,4].includes(i)).map(s=>s.label).join(' – ')));
+      why=`Il motivo conserva la relazione 1°–3°–5° grado, diventando ${right} nella tonalità di ${d.to} maggiore.`;
+      hint='Sposta tutte le note dello stesso intervallo, preservando le distanze relative e l’ortografia della tonalità di arrivo.';
+    }
+    if(opts.length!==4||!opts.includes(right)){throw Error('Quiz incompleto: '+t.id+' ('+opts.length+' risposte)');}
+    return {...t,q,opts,right,why,hint,scoreNotes,key,audioMode,context};
+  }
+  const svgNS='http://www.w3.org/2000/svg';
+  const make=(tag,attr={},text)=>{const x=document.createElementNS(svgNS,tag);for(const [k,v] of Object.entries(attr))x.setAttribute(k,String(v));if(text!==undefined)x.textContent=text;return x;};
+  const color='#233e56';
+  function drawScore(node,notes,k=null,showLabels=true){
+    const c=cClef(), b=137,top=69,gap=17;const left=140+Math.min(k?.n||0,7)*20,space=notes.length<=2?120:76,width=Math.max(380,left+space*(notes.length-1)+70);
+    node.replaceChildren();node.setAttribute('viewBox',`0 0 ${width} 206`);
+    for(let i=0;i<5;i++)node.append(make('line',{x1:22,x2:width-12,y1:top+i*gap,y2:top+i*gap,stroke:'#8196a9','stroke-width':1.2}));
+    const cy=b-(c.line-1)*gap;
+    let path='';if(c.kind==='g')path=`M 67 ${cy+36} C 38 ${cy+22},38 ${cy-4},58 ${cy-15} C 79 ${cy-28},82 ${cy+1},62 ${cy+9} C 45 ${cy+16},40 ${cy-3},50 ${cy-21} C 63 ${cy-43},72 ${cy-64},61 ${cy-75} C 45 ${cy-68},47 ${cy-44},58 ${cy-18} L 69 ${cy+39} C 72 ${cy+57},54 ${cy+66},43 ${cy+51}`;
+    else if(c.kind==='f')path=`M 42 ${cy+23} C 83 ${cy+9},83 ${cy-34},58 ${cy-31} C 41 ${cy-31},43 ${cy-8},57 ${cy-16}`;
+    else path=`M 54 ${cy-33} L 54 ${cy+33} M 64 ${cy-33} L 64 ${cy+33} M 70 ${cy-33} C 87 ${cy-21},87 ${cy-9},68 ${cy} C 87 ${cy+9},87 ${cy+21},70 ${cy+33}`;
+    node.append(make('path',{d:path,stroke:color,'stroke-width':3.4,fill:'none','stroke-linecap':'round'}));
+    if(c.kind==='f')for(const d of [-8,8])node.append(make('circle',{cx:86,cy:cy+d,r:3,fill:color}));
+    let sig=Array(7).fill(0);
+    if(k){sig=alterations(k);let order=k.s==='#'?SH:FL;
+      for(let i=0;i<k.n;i++){
+        const letter=order[i],p=[2,3,4,5].flatMap(o=>[o*7+letter]).sort((a,z)=>Math.abs(a-c.bottom-5)-Math.abs(z-c.bottom-5))[0];
+        const y=b-(p-c.bottom)*8.5,x=115+20*i;
+        node.append(make('text',{x,y:y+10,'font-size':31,'font-family':'Georgia,serif',fill:color},k.s==='#'?'♯':'♭'));
+      }
+    }
+    let hilite=[],head=[];
+    notes.forEach((v,i)=>{
+      const x=left+space*i,y=b-(v.pitch-c.bottom)*8.5;
+      if(y<top){for(let l=top-gap;l>=y-2;l-=gap)node.append(make('line',{x1:x-13,x2:x+13,y1:l,y2:l,stroke:'#8497a8'}));}
+      if(y>b){for(let l=b+gap;l<=y+2;l+=gap)node.append(make('line',{x1:x-13,x2:x+13,y1:l,y2:l,stroke:'#8497a8'}));}
+      let a=v.alter??0,actual=v.letter??mod(v.pitch,7);
+      if(a!==sig[actual])node.append(make('text',{x:x-35,y:y+9,'font-size':29,fill:color,'font-family':'Georgia,serif'},a===0?'♮':signs[a]||''));
+      hilite.push(make('ellipse',{cx:x,cy:y,rx:17,ry:14,fill:'#ffbd58',opacity:0}));node.append(hilite[i]);
+      head.push(make('ellipse',{cx:x,cy:y,rx:10,ry:7,transform:`rotate(-20 ${x} ${y})`,fill:color}));node.append(head[i]);
+      node.append(make('line',{x1:x+8,x2:x+8,y1:y,y2:y-31,stroke:color,'stroke-width':1.6}));
+      if(showLabels)node.append(make('text',{x,y:184,'font-size':12,'font-family':'Arial,sans-serif','text-anchor':'middle',fill:'#536f86'},v.label||pitchLabel(v.pitch)));
+    });
+    return ix=>hilite.forEach((n,i)=>{n.setAttribute('opacity',i===ix?'0.85':'0');head[i].setAttribute('fill',i===ix?'#d46b17':color);});
+  }
+  let currentHighlight=null;
+  function clearVoices(){cancelAnimationFrame(frame);frame=0;for(const o of voices)try{o.stop();}catch{}voices=[];if(currentHighlight)currentHighlight(-1);}
+  async function playNotes(notes,mode='melodic',bpm=92){
+    clearVoices();
+    try{
+      const AC=window.AudioContext||window.webkitAudioContext;if(!AC)throw Error('Il browser non supporta Web Audio');
+      if(!playContext)playContext=new AC();await playContext.resume();
+      const t=playContext.currentTime+0.05,dt=60/bpm;
+      const musical=notes.filter(n=>Number.isFinite(n.midi));if(!musical.length)throw Error('Nessuna nota riproducibile');
+      musical.forEach((n,i)=>{
+        const at=t+(mode==='chord'?0:i*dt),o=playContext.createOscillator(),g=playContext.createGain();
+        o.type='triangle';o.frequency.value=440*Math.pow(2,(n.midi-69)/12);
+        const length=mode==='chord'?1.2:dt*.88;
+        g.gain.setValueAtTime(.0001,at);g.gain.linearRampToValueAtTime(mode==='chord'?.10:.16,at+.025);g.gain.exponentialRampToValueAtTime(.0001,at+length);
+        o.connect(g);g.connect(playContext.destination);o.start(at);o.stop(at+length+.01);
+        o.addEventListener('ended',()=>{try{o.disconnect();g.disconnect();}catch{}});
+        voices.push(o);
+      });
+      const end=mode==='chord'?1.2:musical.length*dt;
+      const tick=()=>{
+        const sec=playContext.currentTime-t,at=mode==='chord'?0:Math.min(musical.length-1,Math.floor(Math.max(0,sec)/dt));
+        if(currentHighlight)currentHighlight(sec>=0&&sec<end?at:-1);
+        if(sec<end)frame=requestAnimationFrame(tick);else frame=0;
+      };tick();return true;
+    }catch(e){const msg=document.querySelectorAll('#academyAudioMsg');if(msg.length)msg[msg.length-1].textContent='Audio non disponibile: '+e.message;return false;}
+  }
+  function makeScoreBlock(parent,notes,k=null,mode='melodic',subtitle='',showLabels=true){
+    const wrap=document.createElement('div');wrap.className='course-chart';
+    const svg=make('svg',{role:'img','aria-label':'Pentagramma con note musicali e alterazioni'});wrap.append(svg);parent.append(wrap);
+    currentHighlight=drawScore(svg,notes,k,showLabels);
+    if(subtitle){const p=document.createElement('p');p.className='muted';p.textContent=subtitle;parent.append(p);}
+    const btn=document.createElement('button');btn.className='mini-btn';btn.textContent=mode==='chord'?'♫ Ascolta l’accordo':'▶ Ascolta e segui le note';btn.onclick=()=>playNotes(notes,mode);
+    parent.append(btn);
+    const status=document.createElement('div');status.className='muted';status.id='academyAudioMsg';status.style.marginTop='5px';parent.append(status);
+  }
+  function button(text,click,variant){const b=document.createElement('button');b.textContent=text;b.className=variant||'mini-btn';b.onclick=click;return b;}
+  function renderHome(){
+    selected=-1;quiz=null;clearVoices();el('courseDetail').classList.add('hide');el('courseHome').classList.remove('hide');
+    const done=mem.passed.filter(Boolean).length;el('courseOverall').textContent=done+' / 6';el('courseProgress').style.width=(done*100/6)+'%';
+    const list=el('courseLevels');list.replaceChildren();
+    lvl.forEach((data,i)=>{
+      const locked=!unlocked(i),finished=!!mem.passed[i];
+      const item=document.createElement('button');item.type='button';item.disabled=locked;
+      item.className='level-card '+(locked?'':finished?'finished':'current');
+      const no=document.createElement('span');no.className='level-number';no.textContent=finished?'✓':locked?'🔒':i+1;
+      const txt=document.createElement('div');txt.style.flex='1';txt.innerHTML=`<h3>${i+1}. ${safe(data.title)}</h3><p>${safe(data.subtitle)}</p><p style="margin-top:5px;font-weight:700;color:#39718a">${finished?'Completato · puoi ripetere':locked?'Si sblocca completando il precedente':'Disponibile · '+(mem.attempts[i]||0)+' tentativi'}</p>`;
+      item.append(no,txt);if(!locked)item.onclick=()=>openLevel(i);list.append(item);
+    });
+    const pending=Object.entries(mem.wrong).filter(([id,v])=>v&&v.misses>0&&v.streak<2);
+    el('reviewDetail').textContent=pending.length?`${pending.length} esercizi da consolidare. Gli errori più frequenti sono proposti per primi.`:'Nessun errore da ripassare. Gli esercizi sbagliati compariranno qui.';
+    el('reviewStart').disabled=!pending.length;
+  }
+  function showAcademy(){
+    el('course').classList.remove('hide');el('appControls').classList.add('course-only');el('learn').classList.add('hide');el('practice').classList.add('hide');
+    el('practiceTab').classList.remove('active');el('learnTab').classList.remove('active');el('courseTab').classList.add('active');
+    window.dispatchEvent(new CustomEvent('tonality:tab',{detail:{learn:false}}));renderHome();
+  }
+  function openLevel(i){if(!unlocked(i))return;selected=i;quiz=null;clearVoices();
+    el('courseHome').classList.add('hide');el('courseDetail').classList.remove('hide');
+    el('courseBadge').textContent='LIVELLO '+(i+1)+' DI 6';el('courseTitle').textContent=lvl[i].title;
+    el('courseSubtitle').textContent=lvl[i].goal;
+    el('courseExamIntro').classList.remove('hide');el('courseExam').classList.add('hide');
+    lesson(i);el('courseDetail').scrollIntoView({block:'start',behavior:'instant'});
+  }
+  function lesson(i){const x=el('courseLesson');x.replaceChildren();const h=document.createElement('h2');h.textContent='Studia e sperimenta';x.append(h);
+    const block=html=>{const d=document.createElement('div');d.className='course-explanation';d.innerHTML=html;x.append(d);};
+    if(i===0){
+      block('<p>La <b>chiave</b> stabilisce il nome delle note sul pentagramma. Chiave di Sol (2ª linea): Sol; chiave di Fa (4ª linea): Fa; chiave di Do: il Do centrale cade sulla linea indicata.</p><p>Non esiste una conversione universale della stessa posizione: cambia la chiave, cambia la nota.</p>');
+      const c=cClef(),p=c.bottom+3,letter=mod(p,7);const oct=Math.floor(p/7);makeScoreBlock(x,[{pitch:p,midi:(oct+1)*12+CH[letter],alter:0,label:name(letter)}],null,'melodic','L’esempio si adatta alla chiave selezionata in alto.');
+    }else if(i===1){
+      block('<p>Il <b>circolo delle quinte</b> collega tonalità successive distanti una quinta giusta. Procedendo in senso orario compare un diesis in più (oppure un bemolle in meno). Ogni maggiore condivide l’armatura con la sua <b>relativa minore</b> (VI grado).</p><p>Le <b>omonime</b> condividono invece la tonica, non l’armatura: Do maggiore e Do minore.</p>');
+      const wheel=make('svg',{viewBox:'0 0 360 360',id:'circleWheel','aria-label':'Circolo delle quinte interattivo'});
+      wheel.append(make('circle',{cx:180,cy:180,r:145,fill:'#f0f7fa',stroke:'#bbd0df','stroke-width':2}));
+      ring.forEach((n,i)=>{
+        const angle=(i/12)*2*Math.PI-Math.PI/2,xp=180+125*Math.cos(angle),yp=180+125*Math.sin(angle);
+        const g=make('g',{class:'keypoint',role:'button',tabindex:'0','aria-label':n+' maggiore'});
+        g.append(make('circle',{cx:xp,cy:yp,r:23,fill:'#fff',stroke:'#8aacbf','stroke-width':1.2}));
+        g.append(make('text',{x:xp,y:yp+4,fill:color,'text-anchor':'middle','font-size':12,'font-weight':700},n));
+        const choose=()=>{const k=findKey(n);if(k)el('circleSelect').value=String(C.indexOf(k));showCircleKey(k||C[0]);};
+        g.addEventListener('click',choose);g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();choose();}});wheel.append(g);
+      });
+      wheel.append(make('text',{x:180,y:173,fill:'#39718b','text-anchor':'middle','font-size':14,'font-weight':700},'Circolo delle'));
+      wheel.append(make('text',{x:180,y:193,fill:'#39718b','text-anchor':'middle','font-size':18,'font-weight':800},'quinte'));
+      x.append(wheel);
+      const label=document.createElement('label');label.textContent='Esplora le 15 armature';label.className='course-toolbar';
+      const select=document.createElement('select');select.id='circleSelect';C.forEach((k,idx)=>{const o=document.createElement('option');o.value=idx;o.textContent=keyLabel(k);select.append(o);});label.append(select);x.append(label);
+      const result=document.createElement('div');result.id='circleDescription';result.className='course-tip';x.append(result);
+      select.onchange=()=>showCircleKey(C[Number(select.value)]);showCircleKey(C[0]);
+    }else if(i===2){
+      block('<p>Per costruire una scala maggiore usa <b>T–T–S–T–T–T–S</b>. La minore naturale usa <b>T–S–T–T–S–T–T</b>. La minore armonica innalza il VII grado; la minore melodica classica innalza VI e VII all’ascendente, ma scende nella forma naturale.</p><p>Qui sotto puoi scegliere le alterazioni per tutti i sette gradi e controllare il risultato.</p>');
+      const wrap=document.createElement('div');wrap.innerHTML=`<div class="course-toolbar"><label>Tonalità <select id="builderKey"></select></label><label>Scala <select id="builderType"><option value="major">Maggiore</option><option value="natural">Minore naturale</option><option value="harmonic">Minore armonica</option><option value="melodic">Minore melodica ascendente</option></select></label></div><div id="builderDegrees" class="course-builder"></div><div class="course-row"><button class="mini-btn" id="builderCheck">Verifica la scala</button><button class="mini-btn" id="builderSolution">Mostra la soluzione</button></div><div id="builderResult" class="course-tip" role="status">Seleziona le alterazioni: i nomi delle sette note sono già in ordine.</div>`;
+      x.append(wrap);C.forEach((k,idx)=>{const o=document.createElement('option');o.value=idx;o.textContent=`${k.major} maggiore / ${k.minor} minore`;el('builderKey').append(o);});
+      el('builderKey').onchange=builder;el('builderType').onchange=builder;el('builderCheck').onclick=()=>checkBuilder(false);el('builderSolution').onclick=()=>checkBuilder(true);builder();
+      const btn=button('🎼 Vai al lettore delle scale',()=>{tab(true);el('scaleCard').scrollIntoView({behavior:'smooth'});});x.append(btn);
+    }else if(i===3){
+      block('<p>Il <b>numero</b> di un intervallo dipende dai nomi delle note (Do–Mi = una terza); la sua <b>qualità</b> dipende dai semitoni (Do–Mi♭ = terza minore, Do–Mi = terza maggiore).</p><p>Ascolta le note prima in successione e poi insieme. La notazione si adatta alla chiave scelta.</p>');
+      const s=sounds[3],oct=cOct(0,1),p=oct*7,notes=[{pitch:p,midi:(oct+1)*12,alter:0,label:'Do'},{pitch:p+2,midi:(oct+1)*12+4,alter:0,label:'Mi'}];makeScoreBlock(x,notes);
+      x.append(button('♫ Ascolta simultaneamente',()=>playNotes(notes,'chord')));
+    }else if(i===4){
+      block('<p>Una <b>triade</b> contiene fondamentale, terza e quinta. Nella scala maggiore le qualità dei sette gradi sono: <b>I maggiore · ii minore · iii minore · IV maggiore · V maggiore · vi minore · vii° diminuita</b>.</p><p>La <b>cadenza</b> è un movimento armonico conclusivo: V–I è autentica, IV–I è plagale, V–vi è d’inganno. Il simbolo ° indica una triade diminuita.</p>');
+      const s=scale(C[0],'major'),chord=[s[0],s[2],s[4]];makeScoreBlock(x,chord,C[0],'chord','Triade di Do maggiore · Do, Mi, Sol.');
+    }else if(i===5){
+      block('<p>L’<b>armatura</b> delimita le possibilità, ma non determina da sola il modo. Osserva dove risolve la melodia, la terza della tonica, la sensibile e la cadenza. Un’alterazione accidentale può innalzare il VII grado nella minore armonica.</p><p>Per <b>trasporre</b>, sposta tutte le note dello stesso intervallo e rispetta la grafia della tonalità d’arrivo. Le relazioni fra le note devono restare identiche.</p>');
+      const s=scale(C[0],'harmonic');makeScoreBlock(x,[s[0],s[2],s[4],s[6],s[7]],C[0],'melodic','Esempio: La minore armonica, con Sol♯ come sensibile.');
+    }
+  }
+  function showCircleKey(k){const d=el('circleDescription');if(!d)return;d.textContent=`${keyLabel(k)} → relativa: ${k.minor} minore · armatura: ${k.n===0?'nessuna alterazione':k.n+' '+(k.s==='#'?'diesis':'bemolli')}. Omonima: ${k.major} minore.`;}
+  function builder(){
+    const key=C[Number(el('builderKey').value)],kind=el('builderType').value, ss=scale(key,kind);
+    const wrap=el('builderDegrees');wrap.replaceChildren();
+    ss.slice(0,7).forEach((n,i)=>{const box=document.createElement('label');box.textContent=L[n.letter];
+      const select=document.createElement('select');select.id='builder-'+i;select.setAttribute('aria-label',`Alterazione del ${i+1}° grado ${L[n.letter]}`);
+      for(const [val,label] of [[-2,'𝄫'],[-1,'♭'],[0,'♮'],[1,'♯'],[2,'𝄪']]){const o=document.createElement('option');o.value=val;o.textContent=label;select.append(o);}select.value='0';box.append(select);wrap.append(box);
+    });el('builderResult').textContent='Le alterazioni sono impostate inizialmente al naturale. Prova a costruire la scala e verifica.';
+  }
+  function checkBuilder(show){
+    const key=C[Number(el('builderKey').value)],kind=el('builderType').value, ss=scale(key,kind);
+    let hits=0;ss.slice(0,7).forEach((n,i)=>{const inp=el('builder-'+i);if(show)inp.value=String(n.alter);if(Number(inp.value)===n.alter)hits++;inp.style.borderColor=Number(inp.value)===n.alter?'#16845a':'#c15454';});
+    el('builderResult').textContent=(hits===7?'✓ Scala corretta! ':`Hai riconosciuto ${hits}/7 alterazioni. `)+'Soluzione: '+ss.slice(0,7).map(x=>x.label).join(' · ')+(kind==='melodic'?' (forma ascendente; discendente naturale).':'');
+  }
+  function exam(i,type='exam'){
+    clearVoices();quizType=type;qIdx=0;score=0;answered=false;
+    let pool=type==='review'?Object.entries(mem.wrong).filter(([id,v])=>v&&v.misses>0&&v.streak<2).map(([id])=>taskSets.flat().find(t=>t.id===id)).filter(Boolean):taskSets[i];
+    if(!pool.length){renderHome();return;}
+    if(type==='review'){
+      pool.sort((a,b)=>(mem.wrong[b.id]?.misses||0)-(mem.wrong[a.id]?.misses||0));
+      quiz=pool.slice(0,Math.min(6,pool.length));
+      selected=quiz[0].level;
+    }else{
+      const kinds=[...new Set(pool.map(t=>t.kind))];const picked=[];
+      for(const type of shuffle(kinds)){const matches=shuffle(pool.filter(t=>t.kind===type));if(matches.length)picked.push(matches[0]);}
+      const prioritized=shuffle(pool.filter(t=>!picked.includes(t))).sort((a,b)=>(mem.wrong[b.id]?.misses||0)-(mem.wrong[a.id]?.misses||0));
+      quiz=shuffle([...picked,...prioritized].slice(0,6));
+    }
+    el('courseExamIntro').classList.add('hide');el('courseExam').classList.remove('hide');
+    el('courseExamTitle').textContent=type==='review'?'Ripasso mirato':'Verifica · '+lvl[i].title;
+    nextTask();el('courseExam').scrollIntoView({behavior:'instant',block:'start'});
+  }
+  function nextTask(){
+    clearVoices();if(qIdx>=quiz.length){endQuiz();return;}
+    answered=false;const t=prepare(quiz[qIdx]);el('courseExamCount').textContent=`${qIdx+1} / ${quiz.length} · ${score} corrette`;
+    el('examProgress').style.width=Math.round(100*qIdx/quiz.length)+'%';
+    const block=el('courseQuestion');block.replaceChildren();
+    const p=document.createElement('h3');p.textContent=t.q;p.style.fontSize='17px';p.style.lineHeight='1.5';block.append(p);
+    if(t.key&&!t.scoreNotes){const svg=make('svg',{viewBox:'0 0 360 204'}),wrap=document.createElement('div');wrap.className='course-chart';svg.id='academySignature';wrap.append(svg);block.append(wrap);renderStaff('academySignature',t.key);}
+    if(t.scoreNotes)makeScoreBlock(block,t.scoreNotes,t.key,t.audioMode,t.context,false);
+    const hint=button('💡 Mostra un suggerimento',()=>{tip.textContent=t.hint;tip.classList.remove('hide');});block.append(hint);
+    const tip=document.createElement('div');tip.className='course-tip hide';block.append(tip);
+    const buttons=el('courseAnswers');buttons.replaceChildren();
+    for(const v of t.opts){const b=document.createElement('button');b.type='button';b.textContent=v;b.onclick=()=>checkAnswer(t,v);buttons.append(b);}
+    el('courseFeedback').classList.add('hide');el('courseNext').classList.add('hide');
+  }
+  function trackAnswer(t,correct){
+    const old=mem.wrong[t.id]||{misses:0,streak:0};
+    if(correct){if(old.misses>0)old.streak=Math.min(2,(old.streak||0)+1);}
+    else{old.misses=Math.min(99,(old.misses||0)+1);old.streak=0;}
+    if(old.misses>0)mem.wrong[t.id]=old;persist();
+  }
+  function checkAnswer(t,value){
+    if(answered)return;answered=true;const ok=value===t.right;if(ok)score++;trackAnswer(t,ok);
+    for(const b of el('courseAnswers').children){b.disabled=true;if(b.textContent===t.right)b.classList.add('right');else if(b.textContent===value)b.classList.add('wrong');}
+    const fb=el('courseFeedback');fb.innerHTML=`<b>${ok?'✓ Risposta corretta':'✕ Risposta da ripassare · '+safe(t.right)}</b><div>${safe(t.why)}</div>`;fb.classList.remove('hide');
+    el('courseNext').textContent=qIdx===quiz.length-1?'Vedi il risultato →':'Domanda successiva →';el('courseNext').classList.remove('hide');
+  }
+  function endQuiz(){
+    clearVoices();el('examProgress').style.width='100%';
+    el('courseQuestion').replaceChildren();el('courseAnswers').replaceChildren();el('courseFeedback').classList.add('hide');el('courseNext').classList.add('hide');
+    const pass=quizType==='exam'&&score>=5;if(quizType==='exam'){
+      mem.attempts[selected]=(mem.attempts[selected]||0)+1;
+      if(pass){mem.passed[selected]=true;persist();}else persist();
+    }
+    const card=document.createElement('div');card.className='course-tip';
+    card.innerHTML=`<div style="font-size:36px;font-weight:800;color:${pass?'#16845a':'#1b5b80'}">${score}/${quiz.length}</div><h3>${quizType==='review'?'Ripasso completato':pass?'Livello superato!':'Livello da ripetere'}</h3><p>${quizType==='review'?'Puoi riprovare gli esercizi che ancora non padroneggi.':pass?'Hai sbloccato il livello seguente. I livelli completati possono essere ripetuti.':'Per sbloccare il successivo servono almeno 5 risposte corrette su 6. Puoi ristudiare e riprovare senza limiti.'}</p>`;
+    el('courseQuestion').append(card);
+    const actions=document.createElement('div');actions.className='path-actions';
+    actions.append(button('← Tutti i livelli',()=>renderHome()));
+    if(quizType==='exam'&&pass&&selected<5)actions.append(button('Vai al livello successivo →',()=>openLevel(selected+1),'cta'));
+    if(quizType==='exam'&&!pass)actions.append(button('Riprova la verifica',()=>exam(selected),'cta'));
+    if(quizType==='review')actions.append(button('Nuovo ripasso',()=>{renderHome();startReview();},'cta'));
+    el('courseQuestion').append(actions);
+  }
+  function startReview(){const matches=Object.entries(mem.wrong).filter(([_,w])=>w&&w.misses>0&&w.streak<2);if(!matches.length){renderHome();return;}
+    selected=0;el('courseHome').classList.add('hide');el('courseDetail').classList.remove('hide');
+    el('courseBadge').textContent='RIPASSO';el('courseTitle').textContent='Esercizi da consolidare';
+    el('courseSubtitle').textContent='Gli errori più frequenti hanno la precedenza. Due risposte corrette nei ripassi consolidano l’esercizio.';
+    el('courseLesson').replaceChildren();exam(0,'review');
+  }
+  el('courseTab').addEventListener('click',showAcademy);
+  el('courseBack').addEventListener('click',renderHome);
+  el('courseBegin').addEventListener('click',()=>exam(selected));
+  el('courseNext').addEventListener('click',()=>{qIdx++;nextTask();});
+  el('reviewStart').addEventListener('click',startReview);
+  el('academyReset').addEventListener('click',()=>{if(confirm('Azzera i livelli sbloccati e gli errori salvati? Le statistiche della modalità Allenati non cambiano.')){mem={passed:Array(6).fill(false),wrong:{},attempts:Array(6).fill(0)};persist();renderHome();}});
+  el('clef').addEventListener('change',()=>{clearVoices();if(selected>=0){if(quiz){nextTask();}else lesson(selected);}});
+  window.addEventListener('tonality:tab',()=>{if(el('course').classList.contains('hide'))clearVoices();});
+  window.addEventListener('pagehide',clearVoices);
+  // Open the learning path by default; existing Allenati/Impara continue to work without gating.
+  showAcademy();
+  // Lightweight deterministic checks callable in an automated browser test.
+  window.AcademyTest={taskSets,prepare,scale,unlocked,getState:()=>mem};
 })();
 
 </script></body></html>

@@ -1,30 +1,58 @@
-# Leggi la tonalità — versione 2.2
+# Leggi la tonalità — 3.0 · Accademia musicale
 
-App per esercitarsi nel riconoscimento delle armature e ascoltare scale con note evidenziate sul pentagramma.
+App didattica **gratuita**, in italiano e fruibile da smartphone, pubblicabile con GitHub Pages.
+Nessun account richiesto per i familiari. Nessuna libreria remota, tracking, pubblicità o caricamento di dati personali.
 
-## Novità della versione 2.2
+## Nuovo nella versione 3.0
 
-- **Visualizzazione per blocchi**: predefinita 5 note, alternativa 3 note. Durante la riproduzione il pentagramma resta fermo per tutto il blocco e si riposiziona soltanto al blocco successivo.
-- Resta disponibile la modalità **Scorrimento a ogni nota (classico)**.
-- Il cursore arancione si ferma sulla nota attiva per tutta la sua durata; la linea e la barra di avanzamento continuano a indicare l'avanzamento complessivo.
-- Selezione della visualizzazione salvata sul dispositivo.
-- Non cambia l'audio: scale maggiori, minori naturali, armoniche e melodiche, controllo tempo e timbro; 9 posizioni di chiave.
-- Tutto il codice è contenuto in `index.html`, senza librerie esterne.
+**Percorso di sei livelli, sbloccati in ordine:**
 
-## Come aggiornare il tuo GitHub Pages
+1. **Lettura delle note:** esercizi con le nove chiavi e posizioni musicali.
+2. **Armature e tonalità:** circolo delle quinte esplorabile, relative maggiori/minori, omonime.
+3. **Costruzione delle scale:** esercizio pratico sui sette gradi e riconoscimento delle alterazioni nelle scale maggiori, minori naturali, armoniche e melodiche ascendenti.
+4. **Intervalli:** riconoscimento visivo della qualità e del numero, ascolto melodico e armonico.
+5. **Accordi e armonia:** triadi diatoniche, gradi della scala e cadenze.
+6. **Analisi e trasposizione:** brevi frammenti originali, scelta della tonalità più probabile e trasposizione di motivi.
+
+**Regola degli sblocchi:** sei domande per verifica, almeno cinque corrette per progredire. I livelli già superati rimangono aperti. Gli esercizi sbagliati sono registrati e proposti nel **Ripasso mirato**; dopo due ripassi corretti sono considerati consolidati.
+
+Le modalità precedenti **Allenati** e **Impara** restano disponibili da subito. Il lettore delle scale conserva ascolto Web Audio, pausa, velocità regolabile, curatore sullo spartito e inquadratura stabile su gruppi di 3 o 5 note.
+
+Il percorso comprende **351 tracce di esercizi** con variazioni dovute alla chiave selezionata. Il suono degli esempi è sintetizzato dal browser e non usa registrazioni di Wikipedia.
+
+I progressi della v3 sono salvati automaticamente nel `localStorage` del singolo browser e non condivisi fra i componenti della famiglia. Le statistiche degli esercizi classici (v2.x) vengono conservate. Browser o dispositivo diversi avranno progressi distinti; la cancellazione dei dati del sito azzera il progresso. La modalità Studio generale è sempre accessibile.
+
+## Pubblicazione: aggiornare il repository già esistente
 
 Repository: https://github.com/tamaka-ict/leggi-la-tonalita
+Sito pubblico: https://tamaka-ict.github.io/leggi-la-tonalita/
 
-1. Estrai lo ZIP, **non caricare lo ZIP direttamente**.
-2. Nel repository, sul ramo `main`, scegli **Add file → Upload files**.
-3. Carica i 6 file contenuti nell'archivio nella **cartella principale**: `index.html`, `sw.js`, `manifest.webmanifest`, `icon.svg`, `README.md`, `ISTRUZIONI-GITHUB.txt`.
-4. Conferma **Commit changes**. Attendi la pubblicazione nella scheda **Actions** o in **Settings → Pages**.
-5. Visita https://tamaka-ict.github.io/leggi-la-tonalita/?v=22 e verifica la scritta **Versione 2.2**. Se vedi la vecchia versione, ricarica la pagina (Ctrl+Shift+R su PC), oppure chiudi e riapri la web app sul telefono.
+1. Apri il repository su GitHub e accedi all'account `tamaka-ict`.
+2. **Consigliato:** crea un backup con `Code → Download ZIP`.
+3. Estrai sul computer `leggi-la-tonalita-v3-github.zip`.
+4. Sul ramo `main`, scegli `Add file → Upload files` e trascina **i 6 file estratti** nella cartella principale del repository (non la cartella e non lo ZIP).
+5. Conferma con `Commit changes`, direttamente sul ramo `main`.
+6. GitHub Pages userà automaticamente i file aggiornati: **non devi creare un nuovo repository né cambiare Settings → Pages**.
+7. Apri https://tamaka-ict.github.io/leggi-la-tonalita/?v=30 e controlla la scritta **Versione 3.0**. Poi verifica il menu **Percorso**.
 
-La configurazione di GitHub Pages non cambia e il link condiviso ai familiari resta invariato. I vecchi `app.js` e `scale.js` non servono più; se presenti nel repository, si possono eliminare separatamente, ma non è obbligatorio. Le statistiche già salvate vengono conservate.
+I vecchi file `app.js` e `scale.js` possono rimanere su GitHub: la v3 non li richiama. I sei file che carichi ora sono `index.html`, `sw.js`, `manifest.webmanifest`, `icon.svg`, `README.md`, `ISTRUZIONI-GITHUB.txt`.
 
-## Prova rapida
+## Test dopo l'upload
 
-Apri **Impara**, seleziona una scala e imposta **Schermata fissa per 5 note**. Premi **Ascolta**: la vista deve cambiare solo alla 6ª e all'11ª nota. Con **3 note**, i passaggi avvengono alla 4ª, 7ª, 10ª e 13ª nota. L'indicatore numerico mostra il blocco corrente. Il tasto Stop riporta all'inizio.
+- Apri **Percorso**: solo il primo livello deve essere disponibile.
+- Completa sei domande nel primo livello (almeno 5 corrette): il secondo deve diventare selezionabile.
+- Apri **Impara**, seleziona Do maggiore e premi **Ascolta la scala**: sul pentagramma si evidenziano le note. Verifica anche il controllo di velocità e la finestra da 5 note.
+- Chiudi e riapri il sito: i livelli sbloccati devono rimanere memorizzati **sullo stesso dispositivo e browser**.
 
-Nota: su dispositivi molto stretti si può scorrere manualmente lo spartito. L'audio è sintetizzato attraverso la Web Audio API; parte da un'interazione dell'utente. Il sito funziona offline dopo il primo caricamento, nei browser compatibili.
+Se compare una versione precedente, usa il link con `?v=30`, ricarica la pagina e riapri l'app; non cancellare subito i dati del sito perché contengono i progressi.
+
+## File e dipendenze
+
+- `index.html`: contiene HTML, CSS e tutto il JavaScript di entrambe le modalità e del nuovo percorso.
+- `sw.js`: cache offline, con aggiornamento prioritario dalla rete.
+- `manifest.webmanifest` e `icon.svg`: icona e installazione sulla schermata Home.
+- `README.md` e `ISTRUZIONI-GITHUB.txt`: documentazione.
+
+### Limitazioni attuali
+
+Gli esempi di analisi sono brevi **frammenti costruiti a scopo didattico**, non importazione/riconoscimento automatico di spartiti PDF o MusicXML. L'audio usa oscillatori sintetici; ascoltarlo per prima volta richiede il tocco di un pulsante nel browser. Il percorso non sincronizza i risultati fra telefoni e non richiede un account.
